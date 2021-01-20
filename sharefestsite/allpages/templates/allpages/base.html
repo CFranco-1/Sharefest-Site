@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'allpages/css/stylesheet.css' %}">
+    <title>SF</title>
+</head>
+<body>
+    <header>
+        ShareFest
+    </header>
+    <nav>
+        <!--Below urls come from urls.py names-->
+        <a href="{% url 'allpages-home' %}">Home</a>
+        <a href="{% url 'allpages-about' %}">About</a>
+        <a href="{% url 'allpages-mappage' %}">Map</a>
+        <a href="{% url 'allpages-donate' %}">Donate/Sponser</a>
+        <a href="{% url 'allpages-volunteer' %}">Volunteer</a>  
+        
+        {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            {% if user.is_superuser %}
+                <a href="{% url 'contact' %}">Contact</a>  
+                <a href="{% url 'user_info' %}">User Info</a>
+            {% endif %}
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </nav>
+    <main>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% block maincontent %}
+
+        {% endblock %}
+    </main>
+    <footer>
+        <a href="https://www.facebook.com/ShareFestWillCounty/" class="fa fa-facebook" title="Facebook">ShareFest Facebook</a>
+        <a href="mailto:gary@sharefestwillcounty.com" title="Email">Email Gary</a> 
+    </footer>    
+</body>
+</html>

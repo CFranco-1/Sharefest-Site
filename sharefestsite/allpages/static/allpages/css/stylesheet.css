@@ -1,0 +1,93 @@
+/*Site-Wide Stylesheet*/
+/*Need @import from google? */
+
+h1, h2{
+    font-family: 'Abril Fatface', Cursive;
+    font-size: 48px;
+    align-content: center;
+}
+h3{
+    align-content: center;
+    font-family: 'Poppins', Sans-Serif;
+    font-size: 24px;
+}
+body{
+    background-color:lightgreen;
+}
+main{
+    font-family: 'Poppins', Sans-Serif;
+    font-size: 18px;
+    background-color:lightgreen;
+    align-items: center;
+}
+header{
+    top: 0;
+    background-color:#2E8B57;
+    width: 100%;
+    font-family: 'Abril Fatface', Cursive;
+    font-size: 36px;
+    padding: 6px;
+    color: white;
+}
+nav{
+    position: absolute;
+    text-align: center;
+    background-color: 	#2E8B57;
+    align-content: center;
+    font-family: 'Abril Fatface', Cursive;
+    width: 100%;
+    padding: 8px;
+}
+nav a{
+    float: left;
+    text-align: center;
+    padding: 12px 14px;
+    color: white;
+    font-size: 17px;
+}
+nav a:hover{
+    background-color: #ddd;
+    color: black;
+}
+main{
+    align-items: center;
+}
+footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background-color: 	#2E8B57;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+.post-container{
+    margin: 20px 20px 0 0;  
+    border: 5px solid #333;
+    float: center;
+}
+.post-thumb img{
+    display: block;
+    float: center;
+    align-content: center;
+}
+.post-content{
+    display: block;
+    float: center;
+    text-align: center;
+}
+.post-title{
+    font-weight: bold;
+    font-size: 170%;
+    float: center;
+}
+.hp{
+    float: left;
+    margin: 0 15px 0 0;
+}
+.map-box{
+    align-content: center;
+    width: 800px;
+    height: 500px;  
+    padding: 50px;
+}

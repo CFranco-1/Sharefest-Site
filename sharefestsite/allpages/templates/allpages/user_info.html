@@ -1,0 +1,10 @@
+{% extends 'allpages/base.html' %}
+{% block maincontent %}
+        <br><br>
+        <h1>All User Info</h1>
+        {% for data in dataset %}
+                {{ data }}<br/>
+                <hr/>
+        {% endfor %}
+        
+{% endblock maincontent %}

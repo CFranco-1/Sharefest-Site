@@ -1,0 +1,26 @@
+{% extends "allpages/base.html" %}
+{% load crispy_forms_tags %}
+{% block maincontent %}
+<br><br><br>
+	<h1>Hi {{ user.username }}</h1>
+	<h3>
+		Edit Your Info Below:
+		<form method="POST" enctype="multipart/form-data"> 
+  
+			<!-- Security token -->
+			{% csrf_token %} 
+			<table>
+			{{ form.as_table }}
+			{{ profile_form.as_table }}
+			</table>	
+			<input type="submit" value="Submit"> 
+		</form> 
+		{% if messages %}
+			<ul class="messages">
+				{% for message in messages %}
+				<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	</h3>
+{% endblock maincontent %}

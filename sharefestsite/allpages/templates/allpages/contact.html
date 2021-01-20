@@ -1,0 +1,16 @@
+{% extends 'allpages/base.html' %}
+{% block maincontent %}
+        <br><br><br>
+        <h3>Send an email to all users:</h3>
+        <form method="POST">
+            <!-- Very Important csrf Token -->
+                {% csrf_token %}
+                <div class = "form-group">
+                        <p>
+                        <h3>{{ form.as_p }}</h3>
+                        </p>
+                        <br>
+                        <input type="submit" name="email" class = 'btn btn-primary btn-lg'>
+                </div>
+        </form>
+{% endblock maincontent %}
